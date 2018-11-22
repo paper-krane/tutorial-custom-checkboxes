@@ -1,0 +1,211 @@
+/* Overall Styles / Defaults */
+*, ::before, ::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 300rem;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #f4f5f5;
+    color:#9a9a9a;
+}
+body {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+h1 {
+    font-size: 2rem;
+}
+h4 {
+    font-size: 1.2rem;
+}
+h1, h4 {
+    font-weight: 300;
+    line-height: 1.1em;
+    margin-bottom: 2rem;
+}
+.full-height {
+    min-height: 100vh;
+    padding: 5rem 0;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.centered {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+.centered:after {
+    display: table;
+}
+.centered h1 {
+    text-align: center;
+}
+.form-element {
+    margin-bottom: 1rem;
+}
+
+/* Checkbox / Radio Design */
+/* ============================================================ */
+/* ============================================================ */
+
+/* Style 1 */
+/* ============================================================ */
+.checkbox, .radio, .checkbox-2, .radio-2 {
+    display: inline-block;
+    padding-left: 2rem;
+    position: relative;
+    line-height: 24px;
+    margin-right: 1rem;
+}
+.checkbox-label, .radio-label {
+    display: inline-block;
+    line-height: 24px;
+}
+.checkbox input[type=checkbox], .radio input[type=radio], .checkbox-2 input[type=checkbox], .radio-2 input[type=radio] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+}
+.checkbox::before, .radio::before, .checkbox span::before, .radio span::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 0.09375rem;
+    background-color: #d6d6d6;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+}
+.radio::before, .radio span::before {
+    border-radius: 50%;
+}
+
+/* Check / radio centers */
+.checkbox span::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 8px;
+    border-right: 2px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+    top: 7px;
+    left: 6px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    opacity: 0;
+}
+.radio span::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    top: 10px;
+    left: 6px;
+    background-color: #FFFFFF;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    cursor: pointer;
+    opacity: 0;
+    border-radius: 50%;
+}
+
+/* Selected checkbox colors */
+.checkbox span::before, .radio span::before {
+    background-color: #FF416C;
+    opacity: 0;
+}
+
+/* Checkbox / radio buttons when checked */
+.checkbox input[type=checkbox]:checked + span::before, .radio input[type=radio]:checked + span::before, .checkbox input[type=checkbox]:checked + span::after, .radio input[type=radio]:checked + span::after {
+    opacity: 1;
+}
+
+/* Style 2 */
+/* ============================================================ */
+
+.checkbox-2 span::before, .checkbox-2 span::after, .radio-2 span::before, .radio-2 span::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+}
+
+/* Checkboxes */
+.checkbox-2 span::before {
+    border-top: 2px solid #333;
+    border-left: 2px solid #333;
+    border-right: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+}
+.checkbox-2 span::after {
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid #333;
+    border-bottom: 2px solid #333;
+}
+
+/* Radio */
+.radio-2 span::before, .radio-2 span::after {
+    border-radius: 50%;
+}
+.radio-2 span::before {
+    border: 2px solid #333;
+}
+.radio-2 span::after {
+    background-color: #333;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+}
+
+/* Checkbox / radio buttons when checked */
+.checkbox-2 input[type=checkbox]:checked + span::after, .checkbox-2 input[type=checkbox]:checked + span::before {
+    width: 8px;
+    transform: translate(4px) rotate(45deg);
+    -webkit-transform: translate(4px) rotate(45deg);
+    -ms-transform: translate(4px) rotate(45deg);
+}
+.checkbox-2 input[type=checkbox]:checked + span::before {
+    border-color: transparent;
+}
+.radio-2 input[type=radio]:checked + span::after {
+    transform: scale(.5);
+    -webkit-transform: scale(.5);
+    -ms-transform: scale(.5);
+}
+
+/* ============================================================ */
+/* ============================================================ */
+
+@media screen and (min-width: 600px) {
+
+    .half {
+        float: left;
+        width: 50%;
+    }
+
+}
